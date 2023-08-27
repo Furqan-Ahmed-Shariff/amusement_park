@@ -12,3 +12,5 @@ def rides(request):
 def stalls(request):
     return render(request, "park_app/stalls.html", {"stalls": Stall.objects.all()})
 
+def shows(request):
+    return render(request, "park_app/shows.html", {"shows": Show.objects.all()})
