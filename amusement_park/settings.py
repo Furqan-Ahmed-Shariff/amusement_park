@@ -1,3 +1,41 @@
+"""Getting secret key from secret manager"""
+
+# Use this code snippet in your app.
+# If you need more information about configurations
+# or implementing the sample code, visit the AWS docs:
+# https://aws.amazon.com/developer/language/python/
+
+import boto3
+from botocore.exceptions import ClientError
+
+
+def get_secret():
+
+    secret_name = "rds!db-4b000f8e-8546-4b68-afad-37c708a010e3"
+    region_name = "ap-south-2"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        # For a list of exceptions thrown, see
+        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+        raise e
+
+    # Decrypts secret using the associated KMS key.
+    secret = get_secret_value_response['SecretString']
+
+    # Your code goes here.
+    return secret
+
 """
 Django settings for amusement_park project.
 
@@ -25,7 +63,7 @@ SECRET_KEY = 'django-insecure-vq8f4%*=v#+%8l5uz1&b(#!g%5tec3wvun2_x&rexl8q6+uax*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['18.60.85.250']
+ALLOWED_HOSTS = ['18.60.85.157']
 
 
 # Application definition
