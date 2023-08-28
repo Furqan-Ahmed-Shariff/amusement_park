@@ -1,0 +1,104 @@
+{% extends 'SA/layout.html' %}
+
+{% block title %}Rides{% endblock %}
+{% block body %}
+
+<section data-bs-version="5.1" class="header1 cid-tNanbrzAzH mbr-fullscreen" id="header1-5">
+    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(237, 245, 225);"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8">
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Central Perk's Rides</strong>
+                </h1>
+                <p class="mbr-text mbr-fonts-style display-5">Our park rides encompass a wide spectrum of
+                    experiences, from heart-pounding thrills to leisurely escapes. These attractions create
+                    cherished memories that linger long after the park visit is over.<br></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features23 cid-tNaP8RgVUK" id="features23-n">
+    <div class="container">
+        <div class="card-wrapper">
+            <div class="card-box align-left">
+                <h4 class="mbr-section-title mbr-fonts-style display-2"><strong>Available Rides</strong></h4>
+            </div>
+        </div>
+        <!-- col-12 col-md-6 col-lg-4 -->
+        <div class="row justify-content-center content-row mt-4">
+            {% for ride in rides %}
+            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
+                <div class="card-box">
+                    <div class="title">
+                        <span class="num mbr-fonts-style display-1"><strong>{{counter}}.</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>{{ride.Name}}</strong>
+                    </h4>
+                    <p class="mbr-text card-text mbr-fonts-style display-7">
+                        {{ride.Description}}
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
+                <div class="card-box">
+                    <div class="title">
+                        <span class="num mbr-fonts-style display-1"><strong>02.</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Project Planning</strong>
+                    </h4>
+                    <p class="mbr-text card-text mbr-fonts-style display-7">
+                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
+                        development.
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
+                <div class="card-box">
+                    <div class="title">
+                        <span class="num mbr-fonts-style display-1"><strong>03.</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Deployment</strong>
+                    </h4>
+                    <p class="mbr-text card-text mbr-fonts-style display-7">
+                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
+                        development.
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
+                <div class="card-box">
+                    <div class="title">
+                        <span class="num mbr-fonts-style display-1"><strong>04.</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Our Philosophy</strong>
+                    </h4>
+                    <p class="mbr-text card-text mbr-fonts-style display-7">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    </p>
+                </div>
+            </div>
+            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
+                <div class="card-box">
+                    <div class="title">
+                        <span class="num mbr-fonts-style display-1"><strong>05.</strong></span>
+                    </div>
+                    <h4 class="card-title mbr-fonts-style display-5">
+                        <strong>Specification</strong>
+                    </h4>
+                    <p class="mbr-text card-text mbr-fonts-style display-7">
+                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
+                        development.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
