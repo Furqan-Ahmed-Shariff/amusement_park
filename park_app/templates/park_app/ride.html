@@ -11,11 +11,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Ride Name</strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{ride.Name}}</strong></h1>
 
-                <p class="mbr-text mbr-fonts-style display-5">Ride Details:&nbsp;Lorem ipsum dolor sit amet, consectetur
-                    adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl condimentum
-                    mattis. Mauris semper risus dui, vitae pulvinar sap<br></p>
+                <p class="mbr-text mbr-fonts-style display-5">Ride Details:&nbsp;{{ride.Description}}<br></p>
 
             </div>
         </div>
@@ -36,7 +34,7 @@
                         style="color: rgb(68, 121, 217); fill: rgb(68, 121, 217);"></span>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Duration</strong></h4>
-                        <h5 class="card-text mbr-fonts-style display-7">Mobirise is a free website builder.</h5>
+                        <h5 class="card-text mbr-fonts-style display-7">{{ride.Duration}}</h5>
                     </div>
                 </div>
             </div>
@@ -46,7 +44,7 @@
                         style="color: rgb(68, 121, 217); fill: rgb(68, 121, 217);"></span>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Maximum Riders</strong></h4>
-                        <h5 class="card-text mbr-fonts-style display-7">Create landing pages with ease.</h5>
+                        <h5 class="card-text mbr-fonts-style display-7">{{ride.MaximumCapacity}}</h5>
                     </div>
                 </div>
             </div>
@@ -58,7 +56,7 @@
                         <h4 class="card-title mbr-fonts-style mb-2 display-7">
                             <strong>Height</strong>
                         </h4>
-                        <h5 class="card-text mbr-fonts-style display-7">Build a website with Mobirise.</h5>
+                        <h5 class="card-text mbr-fonts-style display-7">{{ride.MinimumHeight}}</h5>
                     </div>
                 </div>
             </div>
@@ -78,9 +76,9 @@
                                     Riders</strong></h4>
                             <div class="mbr-text mbr-fonts-style display-7">
                                 <ul>
-                                    <li>Furqan</li>
-                                    <li>Furqan</li>
-                                    <li>Furqan</li>
+                                    {% for participant in ride.participants %}
+                                    <li>{{participant}}</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>
@@ -99,9 +97,9 @@
                                 </strong></h4>
                             <div class="mbr-text mbr-fonts-style display-7">
                                 <ul>
-                                    <li>No Coding</li>
-                                    <li>Mobile Friendly.</li>
-                                    <li>Unique Styles<strong>.</strong></li>
+                                    {% for controller in ride.controllers %}
+                                    <li>{{controller}}</li>
+                                    {% endfor %}
                                 </ul>
                             </div>
                         </div>

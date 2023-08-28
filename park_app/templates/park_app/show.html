@@ -11,11 +11,9 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
-                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>Show Name</strong></h1>
+                <h1 class="mbr-section-title mbr-fonts-style mb-3 display-1"><strong>{{show.Name}}</strong></h1>
 
-                <p class="mbr-text mbr-fonts-style display-5">Show Details:&nbsp;Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit. Nulla aliquam a nibh ut consectetur. Vestibulum nec massa a nisl
-                    condimentum mattis. Mauris semper risus dui, vitae pulvinar sap<br></p>
+                <p class="mbr-text mbr-fonts-style display-5">Show Details:&nbsp;{{show.Description}}<br></p>
 
             </div>
         </div>
@@ -36,7 +34,7 @@
                         style="color: rgb(68, 121, 217); fill: rgb(68, 121, 217);"></span>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Duration</strong></h4>
-                        <h5 class="card-text mbr-fonts-style display-7">Mobirise is a free website builder.</h5>
+                        <h5 class="card-text mbr-fonts-style display-7">{{show.Duration}}</h5>
                     </div>
                 </div>
             </div>
@@ -65,13 +63,14 @@
                 </div>
 
                 <div id="bootstrap-toggle" class="toggle-panel accordionStyles tab-content">
+                    {% for showing in showings %}
                     <div class="card mb-3">
                         <div class="card-header" role="tab" id="headingOne">
                             <a role="button" class="collapsed panel-title text-black" data-toggle="collapse"
                                 data-bs-toggle="collapse" data-core="" href="#collapse1_36" aria-expanded="false"
                                 aria-controls="collapse1">
-                                <h6 class="panel-title-edit mbr-fonts-style mb-0 display-7"><strong>How to create
-                                        more items in this list?</strong>
+                                <h6 class="panel-title-edit mbr-fonts-style mb-0 display-7">
+                                    <strong>{{showing.StartTime}}</strong>
                                 </h6>
                                 <span class="sign mbr-iconfont mbri-arrow-down"></span>
                             </a>
@@ -86,9 +85,9 @@
                                             </strong></h4>
                                         <div class="mbr-text mbr-fonts-style display-7">
                                             <ol>
-                                                <li>No Coding</li>
-                                                <li>Mobile Friendly</li>
-                                                <li>Unique Styles</li>
+                                                {% for member in showing.audience %}
+                                                <li>{{member}}</li>
+                                                {% endfor %}
                                             </ol>
                                         </div>
                                     </div>
@@ -96,6 +95,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endfor %}
                     <div class="card mb-3">
                         <div class="card-header" role="tab" id="headingTwo">
                             <a role="button" class="collapsed panel-title text-black" data-toggle="collapse"
