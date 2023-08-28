@@ -39,17 +39,17 @@
         </div>
         <!-- col-12 col-md-6 col-lg-4 -->
         <div class="row justify-content-center content-row mt-4">
+            {% for stall in stalls %}
             <div class="card p-4 p-md-3 col-md-6 col-lg-3">
                 <div class="card-box">
                     <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>01.</strong></span>
+                        <span class="num mbr-fonts-style display-1"><strong>{{stall.id}}</strong></span>
                     </div>
                     <h4 class="card-title mbr-fonts-style display-5">
-                        <strong>Specification</strong>
+                        <strong>{{stall.Name}}</strong>
                     </h4>
                     <p class="mbr-text card-text mbr-fonts-style display-7">
-                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
-                        development.
+                        {{stall.Description}}
                     </p>
                     <div class="mbr-section-btn"><a class="btn btn-primary display-4"
                             href="https://mobiri.se">Details</a></div>
