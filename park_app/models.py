@@ -39,10 +39,13 @@ class Visitor(models.Model):
     BookedShow = models.ManyToManyField(Showing, blank=True, related_name="audience")
     BookedRide = models.ManyToManyField(Ride, blank=True, related_name="participants")
 
+    def __str__(self):
+        return f"{self.FirstName}"
+
 
 class Stall(models.Model):
     Name = models.CharField(max_length=20)
-    Description = models.CharField(max_length=100)
+    Description = models.CharField(max_length=100, default="It's a Stall")
     Type = models.CharField(max_length=20)
 
     def __str__(self):
@@ -57,3 +60,6 @@ class Worker(models.Model):
     RideID = models.ForeignKey(
         Ride, on_delete=models.CASCADE, related_name="controllers", blank=True
     )
+
+    def __str__(self):
+        return f"{self.Name}"

@@ -67,16 +67,16 @@
                     <div class="card mb-3">
                         <div class="card-header" role="tab" id="headingOne">
                             <a role="button" class="collapsed panel-title text-black" data-toggle="collapse"
-                                data-bs-toggle="collapse" data-core="" href="#collapse1_36" aria-expanded="false"
-                                aria-controls="collapse1">
+                                data-bs-toggle="collapse" data-core="" href="#collapse{{forloop.counter}}_36"
+                                aria-expanded="false" aria-controls="collapse{{forloop.counter}}">
                                 <h6 class="panel-title-edit mbr-fonts-style mb-0 display-7">
-                                    <strong>{{showing.StartTime}}</strong>
+                                    <strong>{{showing.StartTime|date:'h:i A'}}</strong>
                                 </h6>
-                                <span class="sign mbr-iconfont mbri-arrow-down"></span>
+                                <span class="mbr-iconfont mobi-mbri mobi-mbri-arrow-down sign"></span>
                             </a>
                         </div>
-                        <div id="collapse1_36" class="panel-collapse noScroll collapse" role="tabpanel"
-                            aria-labelledby="headingOne">
+                        <div id="collapse{{forloop.counter}}_36" class="panel-collapse noScroll collapse"
+                            role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                 <div class="row justify-content-center">
                                     <div class="counter-container col-md-12 col-lg-10">
@@ -85,8 +85,10 @@
                                             </strong></h4>
                                         <div class="mbr-text mbr-fonts-style display-7">
                                             <ol>
-                                                {% for member in showing.audience %}
-                                                <li>{{member}}</li>
+                                                {% for members in showing.audience.all %}
+                                                <li>{{members}}</li>
+                                                {% empty %}
+                                                <li>No Spectators Yet</li>
                                                 {% endfor %}
                                             </ol>
                                         </div>
@@ -96,42 +98,6 @@
                         </div>
                     </div>
                     {% endfor %}
-                    <div class="card mb-3">
-                        <div class="card-header" role="tab" id="headingTwo">
-                            <a role="button" class="collapsed panel-title text-black" data-toggle="collapse"
-                                data-bs-toggle="collapse" data-core="" href="#collapse2_36" aria-expanded="false"
-                                aria-controls="collapse2">
-                                <h6 class="panel-title-edit mbr-fonts-style mb-0 display-7"><strong>What is Mobirise
-                                        Kit?</strong>
-                                </h6>
-                                <span class="sign mbr-iconfont mbri-arrow-down"></span>
-                            </a>
-
-                        </div>
-                        <div id="collapse2_36" class="panel-collapse noScroll collapse" role="tabpanel"
-                            aria-labelledby="headingTwo">
-                            <div class="panel-body">
-                                <div class="row justify-content-center">
-                                    <div class="counter-container col-md-12 col-lg-10">
-                                        <h4 class="mbr-section-title mbr-fonts-style mb-4 display-5"><strong>
-                                                Spectators
-                                            </strong></h4>
-                                        <div class="mbr-text mbr-fonts-style display-7">
-                                            <ol>
-                                                <li>No Coding</li>
-                                                <li>Mobile Friendly</li>
-                                                <li>Unique Styles</li>
-                                            </ol>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
                 </div>
             </div>
         </div>

@@ -7,7 +7,7 @@ urlpatterns = [
     path("rides", views.rides, name="rides"),
     path("stalls", views.stalls, name="stalls"),
     path("shows", views.shows, name="shows"),
-    path("<int:ride_id>", views.ride, name="ride"),
-    path("<int:show_id>", views.show, name="show"),
-    path("<int:stall_id>", views.stall, name="stall"),
+    path("Stall<int:stall_id>", views.stall, name="stall"),
+    path("Ride<int:ride_id>", views.ride, name="ride"),
+    path("Show<int:show_id>", views.show, name="show"),
 ]

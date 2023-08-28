@@ -4,11 +4,7 @@
 {% block body %}
 
 <section data-bs-version="5.1" class="header1 cid-tNaWOQbESC mbr-fullscreen" id="header1-14">
-
-
-
     <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(237, 245, 225);"></div>
-
     <div class="container">
         <div class="row">
             <div class="col-12 col-lg-8">
@@ -22,16 +18,11 @@
 </section>
 
 <section data-bs-version="5.1" class="features15 cid-tNaYo3Gw8Z" id="features15-1c">
-
-
-
-
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="item features-without-image mb-5 col-12 col-md-4">
                 <div class="item-wrapper">
-                    <span class="mbr-iconfont m-auto mbri-bulleted-list"
+                    <span class="mbr-iconfont m-auto mobi-mbri-bulleted-list"
                         style="color: rgb(68, 121, 217); fill: rgb(68, 121, 217);"></span>
                     <div class="card-box">
                         <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Type</strong></h4>
@@ -39,15 +30,11 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 </section>
 
 <section data-bs-version="5.1" class="content9 cid-tNaWORMajU" id="content9-16">
-
-
     <div class="container">
         <div class="row justify-content-center">
             <div class="counter-container col-md-12 col-lg-10">
@@ -55,7 +42,7 @@
                         Workers</strong></h4>
                 <div class="mbr-text mbr-fonts-style display-7">
                     <ol>
-                        {% for worker in stall.workers %}
+                        {% for worker in workers %}
                         <li>{{worker}}</li>
                         {% endfor %}
                     </ol>

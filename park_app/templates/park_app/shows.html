@@ -41,7 +41,9 @@
             <div class="card p-4 p-md-3 col-md-6 col-lg-3">
                 <div class="card-box">
                     <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>{{show.id}}</strong></span>
+                        <span class="num mbr-fonts-style display-1">
+                            <strong>{% if forloop.counter < 10 %}0{% endif %}{{forloop.counter}}.</strong>
+                        </span>
                     </div>
                     <h4 class="card-title mbr-fonts-style display-5">
                         <strong>{{show.Name}}</strong>
@@ -55,76 +57,6 @@
                 </div>
             </div>
             {% endfor %}
-            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
-                <div class="card-box">
-                    <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>02.</strong></span>
-                    </div>
-                    <h4 class="card-title mbr-fonts-style display-5">
-                        <strong>Project Planning</strong>
-                    </h4>
-                    <p class="mbr-text card-text mbr-fonts-style display-7">
-                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
-                        development.
-                    </p>
-                    <div class="mbr-section-btn">
-                        <a class="btn btn-primary display-4" href="https://mobiri.se">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
-                <div class="card-box">
-                    <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>03.</strong></span>
-                    </div>
-                    <h4 class="card-title mbr-fonts-style display-5">
-                        <strong>Deployment</strong>
-                    </h4>
-                    <p class="mbr-text card-text mbr-fonts-style display-7">
-                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
-                        development.
-                    </p>
-                    <div class="mbr-section-btn">
-                        <a class="btn btn-primary display-4" href="https://mobiri.se">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
-                <div class="card-box">
-                    <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>04.</strong></span>
-                    </div>
-                    <h4 class="card-title mbr-fonts-style display-5">
-                        <strong>Our Philosophy</strong>
-                    </h4>
-                    <p class="mbr-text card-text mbr-fonts-style display-7">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </p>
-                    <div class="mbr-section-btn">
-                        <a class="btn btn-primary display-4" href="https://mobiri.se">Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="card p-4 p-md-3 col-md-6 col-lg-3">
-                <div class="card-box">
-                    <div class="title">
-                        <span class="num mbr-fonts-style display-1"><strong>05.</strong></span>
-                    </div>
-                    <h4 class="card-title mbr-fonts-style display-5">
-                        <strong>Specification</strong>
-                    </h4>
-                    <p class="mbr-text card-text mbr-fonts-style display-7">
-                        Mobirise is perfect for non-techies who are not familiar with the intricacies of web
-                        development.
-                    </p>
-                    <div class="mbr-section-btn">
-                        <a class="btn btn-primary display-4" href="https://mobiri.se">Details</a>
-                    </div>
-                </div>
-            </div>
-
-
-
         </div>
     </div>
 </section>

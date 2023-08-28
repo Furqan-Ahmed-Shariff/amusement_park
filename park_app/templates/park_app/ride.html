@@ -76,7 +76,7 @@
                                     Riders</strong></h4>
                             <div class="mbr-text mbr-fonts-style display-7">
                                 <ul>
-                                    {% for participant in ride.participants %}
+                                    {% for participant in participants %}
                                     <li>{{participant}}</li>
                                     {% endfor %}
                                 </ul>
@@ -97,8 +97,10 @@
                                 </strong></h4>
                             <div class="mbr-text mbr-fonts-style display-7">
                                 <ul>
-                                    {% for controller in ride.controllers %}
+                                    {% for controller in controllers %}
                                     <li>{{controller}}</li>
+                                    {% empty %}
+                                    <li>No Workers</li>
                                     {% endfor %}
                                 </ul>
                             </div>
