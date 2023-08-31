@@ -58,9 +58,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-vq8f4%*=v#+%8l5uz1&b(#!g%5tec3wvun2_x&rexl8q6+uax*"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["18.61.28.34", "127.0.0.1"]
+ALLOWED_HOSTS = ["amusementpark-env.eba-jqtmyexp.ap-south-1.elasticbeanstalk.com"]
 
 
 # Application definition
@@ -156,6 +156,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = "static"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
