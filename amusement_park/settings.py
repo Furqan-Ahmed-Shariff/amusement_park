@@ -1,38 +1,3 @@
-"""Getting secret key from secret manager"""
-
-# Use this code snippet in your app.
-# If you need more information about configurations
-# or implementing the sample code, visit the AWS docs:
-# https://aws.amazon.com/developer/language/python/
-
-import boto3
-from botocore.exceptions import ClientError
-import json
-
-
-def get_secret():
-    secret_name = "rds!db-d7f68eb5-4768-4451-a90b-c3735e3b8d6d"
-    region_name = "ap-south-2"
-
-    # Create a Secrets Manager client
-    session = boto3.session.Session()
-    client = session.client(service_name="secretsmanager", region_name=region_name)
-
-    try:
-        get_secret_value_response = client.get_secret_value(SecretId=secret_name)
-    except ClientError as e:
-        # For a list of exceptions thrown, see
-        # https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
-        raise e
-
-    # Decrypts secret using the associated KMS key.
-    secret = get_secret_value_response["SecretString"]
-
-    # Your code goes here.
-    secret = json.loads(secret)
-    return secret["password"]
-
-
 """
 Django settings for amusement_park project.
 
@@ -46,6 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from .secret import get_secret
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -60,7 +26,10 @@ SECRET_KEY = "django-insecure-vq8f4%*=v#+%8l5uz1&b(#!g%5tec3wvun2_x&rexl8q6+uax*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["amusementpark-env.eba-jqtmyexp.ap-south-1.elasticbeanstalk.com"]
+ALLOWED_HOSTS = [
+    "amusementpark-env.eba-jqtmyexp.ap-south-1.elasticbeanstalk.com",
+    "127.0.0.1",
+]
 
 
 # Application definition
@@ -108,13 +77,13 @@ WSGI_APPLICATION = "amusement_park.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
+# sec = get_secret()
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "amusement_park",
         "USER": "admin",
-        "PASSWORD": get_secret(),
+        "PASSWORD": "abHXDd9~LrLVf74%sB}c3E&#Rv]n",
         "HOST": "amusement-park.cq1wmvyobf7a.ap-south-2.rds.amazonaws.com",
         "PORT": "3306",
     }
