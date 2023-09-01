@@ -77,13 +77,13 @@ WSGI_APPLICATION = "amusement_park.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# sec = get_secret()
+sec = get_secret()
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "amusement_park",
         "USER": "admin",
-        "PASSWORD": "abHXDd9~LrLVf74%sB}c3E&#Rv]n",
+        "PASSWORD": sec,
         "HOST": "amusement-park.cq1wmvyobf7a.ap-south-2.rds.amazonaws.com",
         "PORT": "3306",
     }
