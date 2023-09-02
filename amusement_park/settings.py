@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ["amusementpark-env.eba-jqtmyexp.ap-south-1.elasticbeanstalk.com
 
 INSTALLED_APPS = [
     "park_app",
+    "ebhealthcheck.apps.EBHealthCheckConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
