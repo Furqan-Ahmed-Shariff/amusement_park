@@ -86,7 +86,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "amusement_park",
         "USER": "admin",
-        "PASSWORD": "abHXDd9~LrLVf74%sB}c3E&#Rv]n",
+        "PASSWORD": get_secret(),
         "HOST": "amusement-park.cq1wmvyobf7a.ap-south-2.rds.amazonaws.com",
         "PORT": "3306",
     }
