@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-from .secret import get_secret
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -86,7 +85,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "amusement_park",
         "USER": "admin",
-        "PASSWORD": get_secret(),
+        "PASSWORD": "&sy9ZKb$x884s9(DD85.UT5<G-tg",
         "HOST": "amusement-park.cq1wmvyobf7a.ap-south-2.rds.amazonaws.com",
         "PORT": "3306",
     }
