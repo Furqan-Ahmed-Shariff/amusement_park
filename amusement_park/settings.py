@@ -26,10 +26,8 @@ SECRET_KEY = "django-insecure-vq8f4%*=v#+%8l5uz1&b(#!g%5tec3wvun2_x&rexl8q6+uax*
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "amusementpark-env.eba-jqtmyexp.ap-south-1.elasticbeanstalk.com",
-    "awseb-AWSEB-1O2NWHYES3Z9V-1319378345.ap-south-1.elb.amazonaws.com",
-    "www.centralperk.co.in",
-    "centralperk.co.in",
+    "AWS eb provided hostname",
+    "Domain name of website",
 ]
 
 
@@ -84,10 +82,10 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": "amusement_park",
-        "USER": "admin",
-        "PASSWORD": "&sy9ZKb$x884s9(DD85.UT5<G-tg",
-        "HOST": "amusement-park.cq1wmvyobf7a.ap-south-2.rds.amazonaws.com",
-        "PORT": "3306",
+        "USER": "RDS MySQL Username",
+        "PASSWORD": "RDS static Password or dynamic fetch",
+        "HOST": "AWS eb provided Hostname",
+        "PORT": "MySQL Port",
     }
 }
 
